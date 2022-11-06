@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Repos = () => {
+const Repos = ({repo}) => {
   return (
-    <div>Repos</div>
+    <div>{repo}</div>
   )
 }
 
