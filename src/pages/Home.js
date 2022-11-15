@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import * as ContentMgtURL from "../urls/Routing";
+// import * as ContentMgtURL from "../urls/Routing";
 import "./home.scss";
 import Button from "../components/button/Button";
 import BrandLoader from "../components/BrandLoader";
 import myAvatar from "../assets/images/samavatar.jpg";
+// import Repos from "./Repos";
 
 const Home = () => {
   const [userData, setUserData] = useState([]);
@@ -32,10 +33,10 @@ const Home = () => {
       });
   };
 
-  const navigator = useNavigate();
-  const handleClick = () => {
-    navigator(`${ContentMgtURL.LANDING_ROUTE}/repositories`);
-  };
+  // const navigator = useNavigate();
+  // const handleClick = () => {
+  //   navigator(`${ContentMgtURL.LANDING_ROUTE}/repositories`);
+  // };
   return (
     <div className="container">
       <span>
@@ -81,13 +82,16 @@ const Home = () => {
                 <div className="user-profile">
                   <p className="user-name">{repo.url.slice(39)} </p>
                 </div>
-                <Link
+                {/* <Link
                   onClick={handleClick}
                   className="user-repo"
-                  to={repo.svn_url}
+                  to={"repositories"}
                 >
                   {repo.html_url}
-                </Link>
+                </Link> */}
+                <a href={repo.html_url} target="blank" className="user-repo" >
+                  {repo.html_url}
+                </a>
               </div>
             );
           })}
