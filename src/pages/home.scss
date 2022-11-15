@@ -120,6 +120,7 @@ nav {
     border: 1px solid pink;
     height: 80vh;
     overflow: hidden;
+    border-bottom: none;
 
     .user-profile {
         width: 40%;
@@ -162,13 +163,24 @@ nav {
             font-size: 23px;
         }
     }
+
+    .description-section {
+        display: flex;
+        justify-content: space-around;
+        gap: 10rem;
+        margin-top: 7rem;
+        color: gold;
+
+        span:last-child {
+            margin-right: 10rem;
+        }
+    }
 }
 
 .main {
     width: 100%;
-    height: 80vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 20px 0;
     position: relative;
     top: 110rem;
@@ -232,3 +244,17 @@ nav {
         }
     }
 }
+
+// *************** @Media screens ***************
+@media (max-width: 1740px) {
+
+    .description-section {
+        margin-top: 4rem !important;
+
+    }
+
+    .main {
+        top: 120rem;
+
+    }
+  }

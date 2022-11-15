@@ -49,7 +49,7 @@ const Home = () => {
         <p>Logo</p>
         <ul>
           <li>Home</li>
-          <li>Repository</li>
+          <li onClick={getUserRepo}>Repository</li>
           <li>Contact</li>
         </ul>
         <div className="user-profile"></div>
@@ -65,24 +65,34 @@ const Home = () => {
           </p>
           <p className="user-bio">Web Developer#</p>
         </div>
+        <h2 className="description-section">
+          <span>Repository Name</span>
+          <span>Repository Link</span>
+        </h2>
       </section>
+
       {loading ? (
         <BrandLoader />
       ) : (
         <div className="user-wrapper">
           {userData.map((repo) => {
             return (
-              <div className="main" key={repo.owner.id}>
+              <div className="main" key={repo.id}>
                 <div className="user-profile">
-                  <p className="user-name">{repo.owner.login} </p>
+                  <p className="user-name">{repo.url.slice(39)} </p>
                 </div>
-                <Link onClick={handleClick} className="user-repo" to={repo.svn_url} >{repo.html_url}</Link>
+                <Link
+                  onClick={handleClick}
+                  className="user-repo"
+                  to={repo.svn_url}
+                >
+                  {repo.html_url}
+                </Link>
               </div>
             );
           })}
         </div>
       )}
-
     </div>
   );
 };
