@@ -3,7 +3,7 @@ import './button.scss'
 
 const Button = ({ clickHandler, isActive, btnText }) => {
   return (
-    <button onClick={clickHandler}>{isActive ? "Get Github" : btnText}</button>
+    <button onClick={clickHandler}>{isActive ? "Repositories" : btnText}</button>
   )
 }
 
