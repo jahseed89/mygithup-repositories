@@ -8,6 +8,7 @@ import { LANDING_ROUTE } from "../urls/Routing";
 
 const Home = lazy(() => import("../pages/Home"));
 const Landing = lazy(() => import("../layout/Landing"));
+const PageNotFound = lazy(() => import("../pages/PageNotFound"));
 
 const LandingRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const LandingRoutes = () => {
         <Route path={LANDING_ROUTE} element={<Landing />}>
           <Route index element={<Navigate to={`${LANDING_ROUTE}/home`} />} />
           <Route path={`${LANDING_ROUTE}/*`} element={<PagesRoutes />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </Suspense>
