@@ -18,11 +18,11 @@ const Header = () => {
     <nav>
       <p>Logo</p>
       <ul>
-        {/* <Button clickHandler={() => navigate(`/${HOME_ROUTE}`)} btnText="Home"/>
-          <Button clickHandler={() => navigate(`/${REPO_ROUTE}`)} btnText="Repository"/> */}
         <li onClick={navigateToHome}>Home</li>
-        <li onClick={navigateToRepo}>Repositories</li>
-        <li>Contact</li>
+        <li onClick={navigateToRepo} className="repo">Repositories<span>30</span></li>
+        <li>Projects</li>
+        <li>Packages</li>
+        <li>Stars</li>
       </ul>
     </nav>
   );

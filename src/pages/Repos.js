@@ -30,15 +30,13 @@ const Repos = () => {
   return (
     <div className="container">
       <Header getUserRepo={getRepositories} />
-      <div className="btn-holder">
+      <section className="section">
+        <h2>Repository Name</h2>
         <Button
           btnText="Show All Repositories"
     
           clickHandler={getRepositories}
         />
-      </div>
-      <section className="section">
-        <h2>Repository Name</h2>
         <h2>Repository Link</h2>
       </section>
       {loading ? (
