@@ -1,21 +1,19 @@
-import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-// import * as ContentMgtURL from "../urls/Routing";
-import "./home.scss";
+
 import Button from "../components/button/Button";
 import BrandLoader from "../components/BrandLoader";
-import myAvatar from "../assets/images/samavatar.jpg";
-// import Repos from "./Repos";
+import Header from "../components/header/Header";
+import { REPO_ROUTE } from "../contents-management/Landing";
+import "./home.scss";
 
 const Home = () => {
   const [userData, setUserData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [activeUser, setActiveUser] = useState(false);
-
   const url = "https://api.github.com/users/jahseed89/repos";
 
-  const getUserRepo = () => {
+  useEffect(() => {
     setLoading(true);
     axios
       .get(url)
@@ -29,74 +27,48 @@ const Home = () => {
       })
       .finally(() => {
         setLoading(false);
-        setActiveUser(true);
+        
       });
-  };
+  }, []);
 
-  // const navigator = useNavigate();
-  // const handleClick = () => {
-  //   navigator(`${ContentMgtURL.LANDING_ROUTE}/repositories`);
-  // };
+  const navigate = useNavigate();
+ 
+
   return (
     <div className="container">
-      <span>
-        <Button
-          clickHandler={getUserRepo}
-          isActive={activeUser}
-          btnText="Get Repo"
-        />
-      </span>
-      <nav>
-        <p>Logo</p>
-        <ul>
-          <li>Home</li>
-          <li onClick={getUserRepo}>Repository</li>
-          <li>Contact</li>
-        </ul>
-        <div className="user-profile"></div>
-      </nav>
-      <section className="landing-user">
-        <div className="user-profile">
-          <div className="user-pic">
-            <img src={myAvatar} alt="img" />
-          </div>
-          <p className="user-name">
-            <span>Samson Ocran</span>
-            <span>jahseed89</span>
-          </p>
-          <p className="user-bio">Web Developer#</p>
-        </div>
-        <h2 className="description-section">
-          <span>Repository Name</span>
-          <span>Repository Link</span>
-        </h2>
-      </section>
-
+      <Header/>
       {loading ? (
         <BrandLoader />
       ) : (
-        <div className="user-wrapper">
+        <section className="loading-profile">
           {userData.map((repo) => {
             return (
-              <div className="main" key={repo.id}>
-                <div className="user-profile">
-                  <p className="user-name">{repo.url.slice(39)} </p>
+              <div className="user-profile" key={repo.id}>
+                <div className="user-pic">
+                  <img
+                    src={repo.owner.avatar_url}
+                    alt={repo.owner.avatar_url.slice(1)}
+                  />
                 </div>
-                {/* <Link
-                  onClick={handleClick}
-                  className="user-repo"
-                  to={"repositories"}
-                >
-                  {repo.html_url}
-                </Link> */}
-                <a href={repo.html_url} target="blank" className="user-repo" >
-                  {repo.html_url}
-                </a>
+                <p className="user-name">
+                  <span>Samson Ocran</span>
+                  <span>{repo.owner.login}</span>
+                </p>
+                <p className="user-bio">Web Developer#</p>
               </div>
             );
           })}
-        </div>
+        </section>
       )}
+      <div className="repo-btn-holder">
+        <span>
+        <Button
+          btnText="Repositories"
+         
+          clickHandler={() => navigate(`/${REPO_ROUTE}`)}
+        />
+        </span>
+      </div>
     </div>
   );
 };

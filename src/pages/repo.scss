@@ -1,0 +1,96 @@
+.btn-holder {
+   width: fit-content;
+   margin: 3rem auto;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 3rem auto;
+    color: gold;
+
+    h2:last-child {
+        margin-right: 18rem;
+    }
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    position: relative;
+    top: 120rem;
+    border: 1px solid gold;
+}
+
+.user-wrapper {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .user-profile {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .user-pic {
+            width: 20px;
+            height: 20px;
+            border-radius: 360px;
+            border: 1px solid black;
+            margin: 10px 0;
+        }
+
+        .user-name {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .user-username {
+            font-size: 23px;
+            margin-left: -16rem;
+            margin-bottom: 10px;
+        }
+
+        .user-bio {
+            font-size: 23px;
+            margin-left: -1rem;
+        }
+    }
+
+    .user-repo {
+        width: 40%;
+        height: 100%;
+        padding: 20px;
+        margin-top: 50px;
+        margin: 10px 0;
+
+        input {
+            width: 40%;
+            padding: 6px;
+            outline-color: blue;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// *************** @Media screens ***************
+@media (max-width: 1740px) {
+    .section {
+        width: 75%;
+    
+        h2:last-child {
+            margin-right: 10rem;
+        }
+    }
+   
+  }

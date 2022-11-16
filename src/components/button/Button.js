@@ -1,9 +1,11 @@
 import React from 'react'
 import './button.scss'
 
-const Button = ({ clickHandler, isActive, btnText }) => {
+const Button = ({ clickHandler, btnText }) => {
   return (
-    <button onClick={clickHandler}>{isActive ? "Repositories" : btnText}</button>
+    <button onClick={clickHandler} type="button" >
+      {btnText}
+    </button>
   )
 }
 

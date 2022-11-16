@@ -1,127 +1,8 @@
-button:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.25);
-    top: 100%;
-    width: 140%;
-    height: 180%;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-}
-
-button:after {
-    content: "";
-    position: absolute;
-    left: 55%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.45);
-    top: 180%;
-    width: 160%;
-    height: 190%;
-    background-color: #39bda7;
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-}
-
-button:hover {
-    color: #ffffff;
-    border: 1px solid #39bda7;
-}
-
-button:hover:before {
-    top: -35%;
-    background-color: #39bda7;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-button:hover:after {
-    top: -45%;
-    background-color: #39bda7;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-
-}
-
-
-
-button:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.25);
-    top: 100%;
-    width: 140%;
-    height: 180%;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-}
-
-button:after {
-    content: "";
-    position: absolute;
-    left: 55%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.45);
-    top: 180%;
-    width: 160%;
-    height: 190%;
-    background-color: #39bda7;
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-}
-
-button:hover {
-    color: #ffffff;
-    border: 1px solid #39bda7;
-}
-
-button:hover:before {
-    top: -35%;
-    background-color: #39bda7;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-button:hover:after {
-    top: -45%;
-    background-color: #39bda7;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-
-}
-
-nav {
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    ul li {
-        display: inline-block;
-        padding: 20px;
-        cursor: pointer;
-    }
-
-    .user-profile {
-        width: 50px;
-        height: 50px;
-        border-radius: 360px;
-    }
-}
-
-.landing-user {
+.loading-profile {
     border: 1px solid pink;
-    height: 80vh;
     overflow: hidden;
     border-bottom: none;
-
+    height: 50vh;
     .user-profile {
         width: 40%;
         margin-top: 4em;
@@ -153,108 +34,25 @@ nav {
             }
         }
 
-        .user-username {
-            font-size: 23px;
-            margin-left: -16rem;
-            margin-bottom: 10px;
-        }
-
         .user-bio {
             font-size: 23px;
         }
     }
 
-    .description-section {
-        display: flex;
-        justify-content: space-around;
-        gap: 10rem;
-        margin-top: 7rem;
-        color: gold;
-
-        span:last-child {
-            margin-right: 10rem;
-        }
-    }
 }
 
-.main {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0;
-    position: relative;
-    top: 110rem;
-    border: 1px solid gold;
+.repo-btn-holder {
+    border: 2px solid red;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto 15rem auto;
 }
 
-.user-wrapper {
-    width: 100%;
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    .user-profile {
-        width: 40%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        .user-pic {
-            width: 20px;
-            height: 20px;
-            border-radius: 360px;
-            border: 1px solid black;
-            margin: 10px 0;
-        }
-
-        .user-name {
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .user-username {
-            font-size: 23px;
-            margin-left: -16rem;
-            margin-bottom: 10px;
-        }
-
-        .user-bio {
-            font-size: 23px;
-            margin-left: -1rem;
-        }
-    }
-
-    .user-repo {
-        width: 40%;
-        height: 100%;
-        padding: 20px;
-        margin-top: 50px;
-        margin: 10px 0;
-
-        input {
-            width: 40%;
-            padding: 6px;
-            outline-color: blue;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-    }
-}
 
 // *************** @Media screens ***************
 @media (max-width: 1740px) {
-
-    .description-section {
-        margin-top: 4rem !important;
-
+    .loading-profile {
+        height: 70vh;
     }
 
-    .main {
-        top: 120rem;
-
-    }
   }

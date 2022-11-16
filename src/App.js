@@ -1,10 +1,9 @@
 import { BrowserRouter } from "react-router-dom";
-import LandingRoutes from "./layout/LandingRoutes";
-
+import GlobalRoutes from '../src/navigations/GlobalRoute'
 const App = () => {
   return (
     <BrowserRouter>
-      <LandingRoutes />
+      <GlobalRoutes />
     </BrowserRouter>
   );
 };
