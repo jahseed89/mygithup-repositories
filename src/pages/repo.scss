@@ -107,7 +107,7 @@
 
   @media (max-width: 600px) {
     .section {
-        width: 100%;
+        width: 70% !important;
         margin-top: -4rem;
         margin-left: 0;
         margin-right: 0;
@@ -115,12 +115,12 @@
         padding: 0 1rem;
 
         h2 {
-            font-size: 1rem;
+            font-size: .9rem;
         }
     }
 
     .main {
-        width: 100%;
+        width: 80%;
         padding: 10px 0;
         top: 95rem;
         border: none;
@@ -146,20 +146,4 @@
         }
     }
 
-    // .main {
-    //     width: 100%;
-    //     padding: 10px 0;
-    //     top: 20rem;
-    //     border: none;
-    
-    //     .user-name {
-    //         font-size: 1rem !important;
-    //         font-weight: 300 !important;
-    //     }
-
-    //     a {
-    //         font-size: .9rem;
-    //     }
-
-    // }
   }
