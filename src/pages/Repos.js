@@ -32,11 +32,12 @@ const Repos = () => {
       <Header getUserRepo={getRepositories} />
       <section className="section">
         <h2>Repository Name</h2>
-        <Button
-          btnText="Show All Repositories"
-    
-          clickHandler={getRepositories}
-        />
+        <div className="get-repo-holder">
+          <Button
+            btnText="Show All Repositories"
+            clickHandler={getRepositories}
+          />
+        </div>
         <h2>Repository Link</h2>
       </section>
       {loading ? (

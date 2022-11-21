@@ -60,3 +60,14 @@ button:hover:after {
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 
 }
+
+
+// *************** @Media screens(max-width 600px) ***************
+@media (max-width: 600px) {
+    button {
+        display: inline-flex;
+        padding: 10px 5px;
+        font-size: 14px;
+        display: flex;
+    }
+  }

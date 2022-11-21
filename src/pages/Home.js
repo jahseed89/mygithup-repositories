@@ -27,16 +27,14 @@ const Home = () => {
       })
       .finally(() => {
         setLoading(false);
-        
       });
   }, []);
 
   const navigate = useNavigate();
- 
 
   return (
     <div className="container">
-      <Header/>
+      <Header />
       {loading ? (
         <BrandLoader />
       ) : (
@@ -62,11 +60,10 @@ const Home = () => {
       )}
       <div className="repo-btn-holder">
         <span>
-        <Button
-          btnText="Repositories"
-         
-          clickHandler={() => navigate(`/${REPO_ROUTE}`)}
-        />
+          <Button
+            btnText="Repositories"
+            clickHandler={() => navigate(`/${REPO_ROUTE}`)}
+          />
         </span>
       </div>
     </div>

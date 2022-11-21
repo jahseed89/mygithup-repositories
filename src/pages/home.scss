@@ -3,6 +3,7 @@
     overflow: hidden;
     border-bottom: none;
     height: 50vh;
+
     .user-profile {
         width: 40%;
         margin-top: 4em;
@@ -28,9 +29,13 @@
             font-size: 28px;
             display: flex;
             flex-direction: column;
+
             span:first-child {
                 font-weight: bold;
 
+            }
+            span:last-child {
+                color: #57606a;
             }
         }
 
@@ -54,4 +59,74 @@
         height: 70vh;
     }
 
+  }
+
+// *************** @Media screens(max-width 600px) ***************
+  @media (max-width: 600px) {
+    .loading-profile {
+        border: unset;
+        height: 60vh;
+        position: relative;
+        margin-top: -4rem;
+
+        .user-profile {
+            position: absolute;
+            top: -2rem;
+            right: 14rem;
+
+            .user-pic {
+                width: 200px;
+                height: 200px;
+                // border: none;
+
+                img {
+                    width: 200px;
+                    height: 200px;
+                }
+            } 
+
+            .user-name {
+                font-size: 18px;
+                line-height: 24px;
+
+                span:first-child {
+                    font-weight: bold;
+                }
+              
+            }
+
+            .user-bio {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .repo-btn-holder {
+        position: absolute;
+        top: 23rem;
+        right: 2rem;
+    }
+
+  }
+
+  // *************** @Media screens(max-width 600px) ***************
+  @media (max-width: 376px) {
+
+    .user-profile {
+        right: 12rem !important;
+        .user-pic {
+            width: 150px;
+            height: 150px;
+
+            img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    }
+
+    .repo-btn-holder {
+        top: 20rem;
+    }
+ 
   }
