@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 import Button from "../components/button/Button";
 import BrandLoader from "../components/BrandLoader";
@@ -8,28 +6,7 @@ import Header from "../components/header/Header";
 import { REPO_ROUTE } from "../contents-management/Landing";
 import "./home.scss";
 
-const Home = () => {
-  const [userData, setUserData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const url = "https://api.github.com/users/jahseed89/repos";
-
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get(url)
-      .then((response) => {
-        console.log(response.data);
-        setUserData(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoading(true);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
-
+const Home = ({ loading, userData }) => {
   const navigate = useNavigate();
 
   return (

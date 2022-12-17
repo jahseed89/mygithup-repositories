@@ -1,35 +1,17 @@
-import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import MyContext from "../context";
 import BrandLoader from "../components/BrandLoader";
 import Button from "../components/button/Button";
 import Header from "../components/header/Header";
 import "./repo.scss";
 
 const Repos = () => {
-  const [userData, setUserData] = useState([]);
-  const [loading, setLoading] = useState(false);
 
-  const url = "https://api.github.com/users/jahseed89/repos";
-
-  const getRepositories = () => {
-    setLoading(true);
-    axios
-      .get(url)
-      .then((response) => {
-        console.log(response.data);
-        setUserData(response.data);
-      })
-      .catch((error) => {
-        setLoading(true);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
+  const { loading, userData, getRepositories} = useContext(MyContext)
 
   return (
     <div className="container">
-      <Header getUserRepo={getRepositories} />
+      <Header />
       <section className="section">
         <h2>Repository Name</h2>
         <div className="get-repo-holder">

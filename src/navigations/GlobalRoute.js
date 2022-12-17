@@ -1,13 +1,13 @@
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import { Routes, Route} from "react-router-dom";
 
-
+import PageNotFound from "../pages/PageNotFound";
 import BrandLoader from "../components/BrandLoader";
 import LandingRoutes from "../navigations/LandingRoutes";
 
 
 
-const PageNotFound = lazy(() => import("../pages/PageNotFound"));
+// const PageNotFound = lazy(() => import("../pages/PageNotFound"));
 
 const GlobalRoutes = () => {
   return (
@@ -16,7 +16,7 @@ const GlobalRoutes = () => {
         <Routes>
           <Route path={"/*"} element={<LandingRoutes />} />
           
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="*" element={<PageNotFound/>} />
         </Routes>
       </Suspense>
     </>
