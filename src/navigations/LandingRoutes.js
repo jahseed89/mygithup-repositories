@@ -13,8 +13,8 @@ const Repos = lazy(() => import("../pages/Repos"));
 const LandingRoutes = () => {
   const [userData, setUserData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage] = useState(5);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [postPerPage] = useState(5);
   const url = "https://api.github.com/users/jahseed89/repos?_page1&_limit=5";
 
   useEffect(() => {
@@ -27,16 +27,12 @@ const LandingRoutes = () => {
     fetchPost();
   }, []);
 
-  
-
-  const paginate = () => setCurrentPage();
-
+  // const paginate = () => setCurrentPage();
 
   // *****Get Current Post
-  const indexOfLastPost = currentPage * postPerPage
-  const indexOfFirstPost = indexOfLastPost - postPerPage
-  const currentPost = userData.slice(indexOfFirstPost, indexOfLastPost)
-  
+  // const indexOfLastPost = currentPage * postPerPage
+  // const indexOfFirstPost = indexOfLastPost - postPerPage
+  // const currentPost = userData.slice(indexOfFirstPost, indexOfLastPost)
 
   return (
     <div>
@@ -48,11 +44,12 @@ const LandingRoutes = () => {
               path={HOME_ROUTE}
               element={<Home loading={loading} userData={userData} />}
             />
-            <Route path={REPO_ROUTE} element={<Repos loading={loading} userData={userData} postPerPage={postPerPage}
-          totalPost={userData}
-          paginate={paginate} /> }  />
+            <Route
+              path={REPO_ROUTE}
+              element={<Repos loading={loading} userData={userData} />}
+            />
           </Route>
-          <Route path="*" element={<PageNotFound/>} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </MyContext.Provider>
     </div>
