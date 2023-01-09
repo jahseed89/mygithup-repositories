@@ -1,6 +1,6 @@
 import BrandLoader from "../components/BrandLoader";
 import Header from "../components/header/Header";
-import MyPagination from "../components/pagination/MyPagination";
+// import MyPagination from "../components/pagination/MyPagination";
 import "./repo.scss";
 
 const Repos = ({ loading, userData, postPerPage, totalPost, paginate }) => {
@@ -30,13 +30,13 @@ const Repos = ({ loading, userData, postPerPage, totalPost, paginate }) => {
           })}
         </div>
       )}
-      <div className="pagination-holder">
+      {/* <div className="pagination-holder">
         <MyPagination
           postPerPage={postPerPage}
           totalPost={totalPost}
           paginate={paginate}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
