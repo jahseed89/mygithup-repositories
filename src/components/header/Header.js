@@ -24,6 +24,7 @@ const Header = () => {
         <li>Projects</li>
         <li>Packages</li>
         <li>Stars</li>
+        {/* <li>*888888</li> */}
       </ul>
     </nav>
   );
