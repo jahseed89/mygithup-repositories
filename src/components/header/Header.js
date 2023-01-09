@@ -1,7 +1,8 @@
 import React from "react";
-import "./header.scss";
 import { useNavigate } from "react-router-dom";
 import { HOME_ROUTE, REPO_ROUTE } from "../../contents-management/Landing";
+import "./header.scss";
+
 
 const Header = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Header = () => {
 
   return (
     <nav>
-      <p>Logo</p>
+      <h2>Github App</h2>
       <ul>
         <li onClick={navigateToHome}>Home</li>
         <li onClick={navigateToRepo} className="repo">Repositories<span>30</span></li>

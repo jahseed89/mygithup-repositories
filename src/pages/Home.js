@@ -22,7 +22,7 @@ const Home = ({ loading, userData }) => {
                 <div className="user-pic">
                   <img
                     src={repo.owner.avatar_url}
-                    alt={repo.owner.avatar_url.slice(1)}
+                    alt="#"
                   />
                 </div>
                 <p className="user-name">

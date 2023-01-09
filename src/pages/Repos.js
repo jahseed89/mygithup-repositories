@@ -1,25 +1,15 @@
-import React, { useContext } from "react";
-import MyContext from "../context";
 import BrandLoader from "../components/BrandLoader";
-import Button from "../components/button/Button";
 import Header from "../components/header/Header";
+import MyPagination from "../components/pagination/MyPagination";
 import "./repo.scss";
 
-const Repos = () => {
-
-  const { loading, userData, getRepositories} = useContext(MyContext)
-
+const Repos = ({ loading, userData, postPerPage, totalPost, paginate }) => {
+  
   return (
     <div className="container">
       <Header />
       <section className="section">
         <h2>Repository Name</h2>
-        <div className="get-repo-holder">
-          <Button
-            btnText="Show All Repositories"
-            clickHandler={getRepositories}
-          />
-        </div>
         <h2>Repository Link</h2>
       </section>
       {loading ? (
@@ -40,6 +30,13 @@ const Repos = () => {
           })}
         </div>
       )}
+      <div className="pagination-holder">
+        <MyPagination
+          postPerPage={postPerPage}
+          totalPost={totalPost}
+          paginate={paginate}
+        />
+      </div>
     </div>
   );
 };
