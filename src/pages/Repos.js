@@ -3,7 +3,7 @@ import Header from "../components/header/Header";
 // import MyPagination from "../components/pagination/MyPagination";
 import "./repo.scss";
 
-const Repos = ({ loading, userData, postPerPage, totalPost, paginate }) => {
+const Repos = ({ loading, userData}) => {
   
   return (
     <div className="container">
