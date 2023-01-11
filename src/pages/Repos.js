@@ -1,10 +1,26 @@
+import { useState } from "react";
+import ReactPaginate from "react-paginate";
 import BrandLoader from "../components/BrandLoader";
 import Header from "../components/header/Header";
-import MyPagination from "../components/pagination/MyPagination";
 import "./repo.scss";
 
-const Repos = ({ loading, userData, postPerPage, totalPost, paginate }) => {
-  
+const Repos = ({ loading, userData}) => {
+
+  const [pageNumber, setPageNumber] = useState(0)
+
+  const repoPerPage = 5
+
+  const repoVisited = pageNumber * repoPerPage
+
+  const displayRepo = userData.slice(repoVisited, repoVisited + repoPerPage)
+
+  const countRepo = Math.ceil(userData.length / repoPerPage) 
+
+  const changeRepo = ({selected}) => {
+    setPageNumber(selected)
+  }
+
+
   return (
     <div className="container">
       <Header />
@@ -16,7 +32,7 @@ const Repos = ({ loading, userData, postPerPage, totalPost, paginate }) => {
         <BrandLoader />
       ) : (
         <div className="user-wrapper">
-          {userData.map((repo) => {
+          {displayRepo.map((repo) => {
             return (
               <div className="main" key={repo.id}>
                 <div className="user-profile">
@@ -30,11 +46,14 @@ const Repos = ({ loading, userData, postPerPage, totalPost, paginate }) => {
           })}
         </div>
       )}
-      <div className="">
-        <MyPagination
-          postPerPage={postPerPage}
-          totalPost={totalPost}
-          paginate={paginate}
+      <div className="pagination-holder">
+        <ReactPaginate 
+          prevPageRel={"Prev"}
+          nextLabel={"Next"}
+          pageCount={countRepo}
+          onPageChange={changeRepo}
+          containerClassName={"pagination-btn"}
+          activeClassName={"paginate-active"}
         />
       </div>
     </div>

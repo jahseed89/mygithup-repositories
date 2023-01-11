@@ -83,9 +83,38 @@
 }
 
 .pagination-holder {
-    border: 2px solid red;
     margin: 1rem auto;
     width: 30%;
+
+    .pagination-btn {
+        width: 80%;
+        height: 20px;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+
+        a {
+            padding: 10px;
+            margin: 8px;
+            border-radius: 5px;
+            border: 1px solid #39bda7; 
+            color: #39bda7;
+            cursor: pointer;
+
+            &:hover {
+                color: #fff;
+                background-color: #39bda7;
+            }
+        }
+
+        .paginate-active a {
+            background-color: #39bda7;
+            color: #fff;
+        }
+    }
+
+
 }
 
 // *************** @Media screens ***************
