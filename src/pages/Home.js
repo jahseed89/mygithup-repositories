@@ -1,13 +1,15 @@
+import { useContext } from 'react';
 import { useNavigate } from "react-router-dom";
-
 import Button from "../components/button/Button";
 import BrandLoader from "../components/BrandLoader";
 import Header from "../components/header/Header";
 import { REPO_ROUTE } from "../contents-management/Landing";
+import MyContext from '../context'
 import "./home.scss";
 
-const Home = ({ loading, userData }) => {
+const Home = () => {
   const navigate = useNavigate();
+  const { loading, userData } = useContext(MyContext)
 
   return (
     <div className="container">

@@ -86,6 +86,10 @@
     margin: 1rem auto;
     width: 30%;
 
+    @media (max-width: 600px) {
+        width: 80%;
+    }
+
     .pagination-btn {
         width: 80%;
         height: 20px;
@@ -101,6 +105,10 @@
             border: 1px solid #39bda7; 
             color: #39bda7;
             cursor: pointer;
+
+            @media (max-width: 600px) {
+                font-size: 10px;
+            }
 
             &:hover {
                 color: #fff;

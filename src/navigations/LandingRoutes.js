@@ -13,7 +13,7 @@ const Repos = lazy(() => import("../pages/Repos"));
 const LandingRoutes = () => {
   const [userData, setUserData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const url = "https://api.github.com/users/jahseed89/repos?_page1&_limit=5";
+  const url = "https://api.github.com/users/jahseed89/repos";
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -33,11 +33,11 @@ const LandingRoutes = () => {
             <Route index element={<Navigate to="home" />} />
             <Route
               path={HOME_ROUTE}
-              element={<Home loading={loading} userData={userData} />}
+              element={<Home />}
             />
             <Route
               path={REPO_ROUTE}
-              element={<Repos loading={loading} userData={userData} />}
+              element={<Repos />}
             />
           </Route>
           <Route path="*" element={<PageNotFound />} />

@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ReactPaginate from "react-paginate";
 import BrandLoader from "../components/BrandLoader";
 import Header from "../components/header/Header";
+import MyContext from "../context";
 import "./repo.scss";
 
-const Repos = ({ loading, userData}) => {
+const Repos = () => {
+
+  const {loading, userData} = useContext(MyContext)
 
   const [pageNumber, setPageNumber] = useState(0)
 
