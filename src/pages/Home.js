@@ -20,8 +20,8 @@ const Home = () => {
         <section className="loading-profile">
           {userData.map((repo) => {
             return (
-              <div className="user-profile" key={repo.id}>
-                <div className="user-pic">
+              <div className="user-profile">
+                <div className="user-pic" key={repo.id}>
                   <img
                     src={repo.owner.avatar_url}
                     alt="#"
